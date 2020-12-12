@@ -1,5 +1,5 @@
 # vim-settings
-Personal Preferences and Settings for vim (neovim :) ) 
+Personal Preferences and Settings for vim (neovim :) ) needs Neovim and vim-plug
 ## How to Use
 1. clone this repository in /home/<username>/.config/nvim
 2. start neo vim with `nvim`
