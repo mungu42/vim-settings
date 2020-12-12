@@ -5,4 +5,6 @@ Personal Preferences and Settings for vim (neovim :) )
 2. start neo vim with `nvim`
 3. run `:PlugInstall`
 4. Enjoy
-## Alternatively uncomment `" set relativenumber` for relative line numbers
+
+
+Note: Alternatively uncomment `" set relativenumber` for relative line numbers
