@@ -12,6 +12,9 @@ endif
 syntax on
 
 call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdtree' "nerdTree Plugin for file explorer
+
+
 " React Plugins 
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
