@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/ajinkya/Documents/Projects/stealth_project/stealth-ui/src'
 let g:netrw_dirhist_3='/home/ajinkya/Documents/Projects/stealth_project/stealth-ui'
 let g:netrw_dirhist_2='/home/ajinkya/Documents/Projects/stealth_ebifs/main'
 let g:netrw_dirhist_1='/home/ajinkya/Documents/Projects/stealth_ebifs'
