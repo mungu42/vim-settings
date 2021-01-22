@@ -1,23 +1,70 @@
 "------------------------------------------------
 " Plugins START
+
+" Install vim-plug if not installed
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+         autocmd VimEnter * PlugInstall
+endif
+
+syntax on
+
+
 call plug#begin()
-  Plug 'airblade/vim-gitgutter'
-  Plug 'cespare/vim-toml'
-  Plug 'editorconfig/editorconfig-vim'
-  Plug 'itchyny/lightline.vim'
-  Plug 'junegunn/vim-easy-align'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  Plug 'mengelbrecht/lightline-bufferline'
-  Plug 'lifepillar/vim-gruvbox8'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'tpope/vim-commentary'
+
+	Plug 'preservim/nerdtree' |
+			\ Plug 'Xuyuanp/nerdtree-git-plugin' "nerdTree Plugin for file explorer
+	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+
+	Plug 'airblade/vim-gitgutter'
+	Plug 'cespare/vim-toml'
+	Plug 'editorconfig/editorconfig-vim'
+	Plug 'itchyny/lightline.vim'
+	Plug 'junegunn/vim-easy-align'
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
+	Plug 'mengelbrecht/lightline-bufferline'
+	Plug 'lifepillar/vim-gruvbox8'
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'tpope/vim-commentary'
+
+	Plug 'vim-airline/vim-airline'
+	" tab bar
+	Plug 'majutsushi/tagbar'
+	"Icons
+	Plug 'ryanoasis/vim-devicons'
+
+	"python plugins
+	" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+	
+
+
+
+	"
+	" JS plugins
 call plug#end()
 " Plugins END
 "------------------------------------------------
 
 "------------------------------------------------
 " Settings START
+"
+"
+set tabstop=4
+set shiftwidth=4
+
+
+" Plugin Settings
+let g:airline#extensions#tabline#enabled = 1
+let g:NERDTreeGitStatusWithFlags = 1
+" enable theme oceanic material
+" ShortCuts
+map <C-n> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
+
+
 let mapleader = "\<Space>"
 filetype plugin on
 set completeopt=menuone
@@ -231,3 +278,18 @@ nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>d
+
+"easy split movement
+nnoremap <c-left> <c-w>h
+nnoremap <c-down> <c-w>j
+nnoremap <c-up> <c-w>k
+nnoremap <c-right> <c-w>l
+
+
+" Search Options
+set hlsearch  " highlight search and search while typing
+set incsearch
+set visualbell
+
+let g:airline_powerline_fonts = 1
+set fileformat=unix
