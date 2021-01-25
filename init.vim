@@ -12,7 +12,6 @@ syntax on
 
 
 call plug#begin()
-
 	Plug 'preservim/nerdtree' |
 			\ Plug 'Xuyuanp/nerdtree-git-plugin' "nerdTree Plugin for file explorer
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -25,7 +24,7 @@ call plug#begin()
 	Plug 'junegunn/vim-easy-align'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
-	Plug 'mengelbrecht/lightline-bufferline'
+	" Plug 'mengelbrecht/lightline-bufferline'
 	Plug 'lifepillar/vim-gruvbox8'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'tpope/vim-commentary'
@@ -39,11 +38,15 @@ call plug#begin()
 	"python plugins
 	" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 	
-
+	"git manager 
+	Plug 'tpope/vim-fugitive'
 
 
 	"
-	" JS plugins
+	" JS plugin
+	" Plug 'pangloss/vim-javascript'
+	" Plug ''
+
 call plug#end()
 " Plugins END
 "------------------------------------------------
@@ -112,43 +115,43 @@ set list
 set listchars=tab:»·,trail:·
 
 " let buffers be clickable
-let g:lightline#bufferline#clickable=1
-let g:lightline#bufferline#shorten_path=1
-let g:lightline#bufferline#min_buffer_count=1
+" let g:lightline#bufferline#clickable=1
+" let g:lightline#bufferline#shorten_path=1
+" let g:lightline#bufferline#min_buffer_count=1
 
-let g:lightline = {
-\  'colorscheme': 'jellybeans',
-\  'active': {
-\    'left': [ [], [], [ 'relativepath' ] ],
-\    'right': [ [], [], [ 'lineinfo', 'percent' ] ]
-\  },
-\  'inactive': {
-\    'left': [ [], [], [ 'relativepath' ] ],
-\    'right': [ [], [], [ 'lineinfo', 'percent' ] ]
-\  },
-\  'subseparator': {
-\    'left': '', 'right': ''
-\  },
-\  'tabline': {
-\    'left': [ ['buffers'] ],
-\    'right': [ [] ]
-\  },
-\  'tabline_separator': {
-\    'left': "", 'right': ""
-\  },
-\  'tabline_subseparator': {
-\    'left': "", 'right': ""
-\  },
-\  'component_expand': {
-\    'buffers': 'lightline#bufferline#buffers'
-\  },
-\  'component_raw': {
-\    'buffers': 1
-\  },
-\  'component_type': {
-\    'buffers': 'tabsel'
-\  }
-\}
+" let g:lightline = {
+" \  'colorscheme': 'jellybeans',
+" \  'active': {
+" \    'left': [ [], [], [ 'relativepath' ] ],
+" \    'right': [ [], [], [ 'lineinfo', 'percent' ] ]
+" \  },
+" \  'inactive': {
+" \    'left': [ [], [], [ 'relativepath' ] ],
+" \    'right': [ [], [], [ 'lineinfo', 'percent' ] ]
+" \  },
+" \  'subseparator': {
+" \    'left': '', 'right': ''
+" \  },
+" \  'tabline': {
+" \    'left': [ ['buffers'] ],
+" \    'right': [ [] ]
+" \  },
+" \  'tabline_separator': {
+" \    'left': "", 'right': ""
+" \  },
+" \  'tabline_subseparator': {
+" \    'left': "", 'right': ""
+" \  },
+" \  'component_expand': {
+" \    'buffers': 'lightline#bufferline#buffers'
+" \  },
+" \  'component_raw': {
+" \    'buffers': 1
+" \  },
+" \  'component_type': {
+" \    'buffers': 'tabsel'
+" \  }
+" \}
 
 " Theme END
 "------------------------------------------------
@@ -176,7 +179,7 @@ nmap <Leader>h :History<CR>
 " Coc START
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=200
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -291,5 +294,5 @@ set hlsearch  " highlight search and search while typing
 set incsearch
 set visualbell
 
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 set fileformat=unix
