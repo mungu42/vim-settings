@@ -288,6 +288,8 @@ nnoremap <c-down> <c-w>j
 nnoremap <c-up> <c-w>k
 nnoremap <c-right> <c-w>l
 
+nnoremap <C-e> :bnext<CR>
+nnoremap <C-q> :bprevious<CR>
 
 " Search Options
 set hlsearch  " highlight search and search while typing
@@ -296,3 +298,4 @@ set visualbell
 
 " let g:airline_powerline_fonts = 1
 set fileformat=unix
+
